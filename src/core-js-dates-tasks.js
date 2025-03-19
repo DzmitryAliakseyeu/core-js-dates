@@ -365,8 +365,8 @@ function getWorkSchedule(period, countWorkDays, countOffDays) {
  * Date(2020, 2, 1) => true
  */
 function isLeapYear(date) {
-  const lastDayOfFebruary = new Date(date.getUTCFullYear(), 2, 0).getUTCDate();
-  return lastDayOfFebruary === 28;
+  const year = date.getUTCFullYear();
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
 module.exports = {
